@@ -2,6 +2,7 @@ FROM debian:10
 
 RUN apt-get update \
  && apt-get install -y \
+    bzip2
     curl \
     default-jdk \
     dumb-init \
@@ -17,7 +18,7 @@ RUN apt-get update \
     wget \
   && rm -rf /var/lib/apt/lists/*
 RUN wget https://repo.anaconda.com/archive/Anaconda3-5.3.1-Linux-x86_64.sh -O ~/anaconda.sh && bash ~/anaconda.sh -b -p $HOME/anaconda
-
+RUN curl -sL https://deb.nodesource.com/setup_lts.x | bash - && apt-get install -y nodejs
 
 # https://wiki.debian.org/Locale#Manually
 RUN sed -i "s/# en_US.UTF-8/en_US.UTF-8/" /etc/locale.gen \
