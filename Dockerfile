@@ -2,7 +2,7 @@ FROM debian:10
 
 RUN apt-get update \
  && apt-get install -y \
-    bzip2
+    bzip2 \
     curl \
     default-jdk \
     dumb-init \
