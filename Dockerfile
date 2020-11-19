@@ -18,6 +18,7 @@ RUN apt-get update \
     wget \
   && rm -rf /var/lib/apt/lists/*
 RUN wget https://repo.anaconda.com/archive/Anaconda3-5.3.1-Linux-x86_64.sh -O ~/anaconda.sh && bash ~/anaconda.sh -b -p $HOME/anaconda
+
 RUN curl -sL https://deb.nodesource.com/setup_lts.x | bash - && apt-get install -y nodejs
 
 # https://wiki.debian.org/Locale#Manually
