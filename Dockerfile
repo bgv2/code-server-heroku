@@ -19,7 +19,7 @@ RUN apt-get update \
   && rm -rf /var/lib/apt/lists/*
 RUN curl -sL https://deb.nodesource.com/setup_lts.x | bash - && apt-get install -y nodejs 
 
-RUN wget https://repo.anaconda.com/archive/Anaconda3-5.3.1-Linux-x86_64.sh -O ~/anaconda.sh && bash ~/anaconda.sh -b -p $HOME/anaconda
+RUN wget https://repo.anaconda.com/archive/Anaconda3-5.3.1-Linux-x86_64.sh -O ~/anaconda.sh && bash ~/anaconda.sh -b -p $HOME/anaconda && ln -s /root/anaconda/etc/profile.d/conda.sh /etc/profile.d/conda.sh
 
 # https://wiki.debian.org/Locale#Manually
 RUN sed -i "s/# en_US.UTF-8/en_US.UTF-8/" /etc/locale.gen \
